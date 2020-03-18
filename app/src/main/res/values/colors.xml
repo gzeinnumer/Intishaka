@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#d3eae2</color>
-    <color name="colorPrimaryDark">#4caa86</color>
+    <color name="colorPrimary">#4caa86</color>
+    <color name="colorPrimaryDark">#d3eae2</color>
     <color name="colorAccent">#03DAC5</color>
 
     <color name="red_50">#FFEBEE</color>git
