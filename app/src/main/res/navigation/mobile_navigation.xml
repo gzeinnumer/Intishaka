@@ -48,7 +48,12 @@
         android:id="@+id/fr_operational"
         android:name="com.gzeinnumer.intishaka.ui.bussines_office.OperationalFragment"
         android:label="operational"
-        tools:layout="@layout/fragment_operational"/>
+        tools:layout="@layout/fragment_operational">
+
+        <action
+            android:id="@+id/action_BussinessOfficeFragment_to_OperationalExpensesFragment"
+            app:destination="@id/fr_operational_expenses"/>
+    </fragment>
 
     <fragment
         android:id="@+id/fr_bussniss_form"
@@ -72,4 +77,15 @@
         android:name="com.gzeinnumer.intishaka.ui.meeting.MeetingFormFragment"
         android:label="Meeting Form"
         tools:layout="@layout/fragment_meeting_form" />
+
+    <fragment
+        android:id="@+id/fr_operational_expenses"
+        android:name="com.gzeinnumer.intishaka.ui.bussines_office.OperationalExpensesFragment"
+        tools:layout="@layout/fragment_operational_expenses"
+        android:label="expenses" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Title" />
+    </fragment>
 </navigation>

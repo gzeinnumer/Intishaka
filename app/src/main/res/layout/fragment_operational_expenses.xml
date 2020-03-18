@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.bussines_office.BussinessOfficeFormFragment">
+    tools:context=".ui.bussines_office.OperationalExpensesFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -27,6 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
@@ -61,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:text="Objective"
+                android:text="Type"
                 app:layout_constraintBottom_toBottomOf="@+id/sp_objective"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="@id/sp_objective" />
@@ -76,6 +77,24 @@
                 app:layout_constraintStart_toEndOf="@id/tv_objective"
                 app:layout_constraintTop_toBottomOf="@+id/ed_periode" />
 
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Amount"
+                app:layout_constraintBottom_toBottomOf="@id/ed_amount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ed_amount" />
+
+            <EditText
+                android:id="@+id/ed_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_objective"
+                app:layout_constraintTop_toBottomOf="@+id/sp_objective" />
 
             <ImageView
                 android:id="@+id/img_pic"
@@ -85,7 +104,7 @@
                 android:src="@drawable/ic_menu_gallery"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sp_objective" />
+                app:layout_constraintTop_toBottomOf="@id/ed_amount" />
 
             <Button
                 android:id="@+id/btn"
@@ -98,7 +117,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_pic" />
-
 
             <TableLayout
                 android:layout_marginTop="16dp"
