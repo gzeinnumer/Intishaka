@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.gzeinnumer.intishaka.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/fr_bussniss" />
+        <action
+            android:id="@+id/action_HomeFragment_to_MeetingFragment"
+            app:destination="@+id/fr_meeting"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fr_meeting"
+        android:name="com.gzeinnumer.intishaka.ui.meeting.MeetingFragment"
+        android:label="Meeting"
+        tools:layout="@layout/fragment_meeting">
+        <action
+            android:id="@+id/action_MeetingFragment_to_MeetingFormFragment"
+            app:destination="@id/fr_meeting_form"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fr_bussniss"
+        android:name="com.gzeinnumer.intishaka.ui.bussines_office.BussinessOfficeFragment"
+        android:label="Bussiness Office"
+        tools:layout="@layout/fragment_bussiness_office" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.gzeinnumer.intishaka.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.gzeinnumer.intishaka.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/fr_meeting_form"
+        android:name="com.gzeinnumer.intishaka.ui.meeting.MeetingFormFragment"
+        android:label="Meeting Form"
+        tools:layout="@layout/fragment_meeting_form" />
+</navigation>
