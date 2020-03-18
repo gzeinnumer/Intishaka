@@ -1,320 +1,355 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="80dp"
-        android:src="@mipmap/ic_launcher"
-        app:civ_border_width="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/good_morning_mr_da"
-        android:textSize="21sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_image" />
-
-    <TextView
-        android:id="@+id/tv_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="01:10:59"
-        android:textSize="31sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name" />
-
-    <ImageView
-        android:id="@+id/img_task"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_playlist_add_check_black_24dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_timer" />
-
-    <ImageView
-        android:id="@+id/img_calendar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_playlist_add_check_black_24dp"
-        app:layout_constraintRight_toLeftOf="@id/img_task"
-        app:layout_constraintTop_toTopOf="@id/img_task" />
-
-    <ImageView
-        android:id="@+id/img_osap"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_playlist_add_check_black_24dp"
-        app:layout_constraintLeft_toRightOf="@id/img_task"
-        app:layout_constraintTop_toTopOf="@id/img_task" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/div_1"
-        android:layout_width="0dp"
-        android:layout_height="8dp"
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="@color/grey_50"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@id/img_osap"
-        app:layout_constraintStart_toStartOf="@id/img_calendar"
-        app:layout_constraintTop_toBottomOf="@id/img_task" />
-
-    <TableLayout
-        app:layout_constraintBottom_toTopOf="@+id/cv_banner"
-        android:id="@+id/tb_menu"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintTop_toBottomOf="@id/div_1">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TableRow>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_start"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+        <LinearLayout
+            android:id="@+id/_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:context=".ui.home.HomeFragment">
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/doxter"
+                app:civ_border_width="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/good_morning_mr_da"
+                android:textSize="21sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/start"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_bussines_bisnis"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+            <TextView
+                android:id="@+id/tv_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="01:10:59"
+                android:textSize="31sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
+                <ImageView
+                    android:id="@+id/img_task"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/calendar_icon"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_timer" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Bussines Bisnis"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_meeting"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                <ImageView
+                    android:id="@+id/img_calendar"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/tasks_icon"
+                    app:layout_constraintRight_toLeftOf="@id/img_task"
+                    app:layout_constraintTop_toTopOf="@id/img_task" />
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/img_osap"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/target_icon"
+                    app:layout_constraintLeft_toRightOf="@id/img_task"
+                    app:layout_constraintTop_toTopOf="@id/img_task" />
+            </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/meeting"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_training"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/training"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </TableRow>
-        <TableRow>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/menu_visit"
-                android:layout_margin="8dp"
+                android:id="@+id/div_1"
+                android:layout_width="250dp"
+                android:layout_height="8dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/grey_50"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="@id/img_osap"
+                app:layout_constraintStart_toStartOf="@id/img_calendar"
+                app:layout_constraintTop_toBottomOf="@id/img_task" />
+
+            <TableLayout
+                android:id="@+id/tb_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                app:layout_constraintBottom_toTopOf="@+id/cv_banner"
+                app:layout_constraintTop_toBottomOf="@id/div_1">
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <TableRow>
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_start"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/visit"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_traveling"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/off_icon" />
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/start"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/traveling"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_db"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_bussines_bisnis"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/tower_icon" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="DB"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/menu_Shipken"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bussines Bisnis"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:padding="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_meeting"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_playlist_add_check_black_24dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Shipken"
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </TableRow>
-    </TableLayout>
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/meetingight_icon" />
 
-    <ImageView
-        android:src="@drawable/shape_blue_curved_down_to_up"
-        android:id="@+id/cv_banner"
-        android:layout_marginRight="32dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/meeting"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_training"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/meetingight_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/training"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+
+                <TableRow>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_visit"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/visit_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/visit"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_traveling"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/earth_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/traveling"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_db"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/db_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="DB"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/menu_Shipken"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/target_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Shipken"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/shape_blue_curved_down_to_up" />
+    </LinearLayout>
+
+
+</RelativeLayout>
