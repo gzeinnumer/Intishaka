@@ -33,7 +33,28 @@
         android:id="@+id/fr_bussniss"
         android:name="com.gzeinnumer.intishaka.ui.bussines_office.BussinessOfficeFragment"
         android:label="Bussiness Office"
-        tools:layout="@layout/fragment_bussiness_office" />
+        tools:layout="@layout/fragment_bussiness_office" >
+
+        <action
+            android:id="@+id/action_BussinessOfficeFragment_to_BussinessOfficeFormFragment"
+            app:destination="@id/fr_bussniss_form"/>
+
+        <action
+            android:id="@+id/action_BussinessOfficeFragment_to_OperationalFragment"
+            app:destination="@id/fr_operational"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fr_operational"
+        android:name="com.gzeinnumer.intishaka.ui.bussines_office.OperationalFragment"
+        android:label="operational"
+        tools:layout="@layout/fragment_operational"/>
+
+    <fragment
+        android:id="@+id/fr_bussniss_form"
+        android:name="com.gzeinnumer.intishaka.ui.bussines_office.BussinessOfficeFormFragment"
+        tools:layout="@layout/fragment_bussiness_office_form"
+        android:label="Bussiness Form"/>
 
     <fragment
         android:id="@+id/nav_gallery"
